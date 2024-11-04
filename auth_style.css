@@ -1,0 +1,44 @@
+main{
+    display:flex;
+    align-items: center;
+    padding: 72px;
+    filter: drop-shadow(4px 4px 4px);
+}
+
+#auth-form{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height: 70vh;
+    padding-left: 64px;
+    padding-right: 64px;
+    filter: drop-shadow(1px 1px 4px);
+}
+
+#auth-right{
+    height: 70vh;
+    width: 30%;
+    background: rgb(18,50,76);
+    background: linear-gradient(270deg, rgba(18,50,76,1) 0%, rgba(43,118,178,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+#auth-form > input{
+    height: 30px;
+}
+
+#auth-right > h3{
+    color:white;
+}
+
+
+#auth-right > p{
+    color: white;
+}

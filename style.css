@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Montserrat", serif; 
+    color: black;
+}
+
+body{
+    background: rgb(18,50,76);
+    background: linear-gradient(270deg, rgba(18,50,76,1) 0%, rgba(43,118,178,1) 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+#body-content{
+    background-color: white;
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    top: 32px;
+    bottom: 32px;
+    filter: drop-shadow(4px 4px 4px);
+    display:flex;
+}
+
+.primary-btn{
+    padding: 12px 24px;
+    background-color: rgb(43,118,178);
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.primary-btn:hover{
+    background-color: rgb(25, 92, 148);
+}
+
+.secondary-btn{
+    padding: 12px 24px;
+    border: 1px solid black;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.secondary-btn:hover{
+    background-color: black;
+    color: white;
+}
+
+main{
+    width: 80%;
+}
+
+#side-navbar{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    width: 15%;
+    border-right: 1px solid black;
+}
+
+#side-navbar div{
+    display:flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+#side-navbar > div > a {
+    font-size: 1.25rem;
+    transition: 0.4s ease;
+}
+
+#side-navbar > div > a:hover{
+    scale: 1.05;
+}
+
+#side-navbar > h1{
+    font-size: 2rem;
+    transition: 0.4s ease;
+}
+
+#side-navbar > a > h1:hover{
+    scale: 1.05;
+}
+
+#settings{
+    width: 164px;
+    text-align: center;
+}
+
+#settings div{
+    display: none !important;
+}
+
+#settings-btn{
+    padding: 8px;
+}
+
+#settings > div > button{
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+#settings:hover > div{
+    width: 164px;
+    display:flex !important;
+    gap:4px;
+    position: absolute;
+    bottom: 64px;
+}

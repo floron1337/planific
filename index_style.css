@@ -1,0 +1,18 @@
+#index-main{
+    display:flex;
+    align-items: center;
+    gap: 16px;
+    padding: 72px;
+}
+
+#index-left h2{
+    font-weight: 500;
+}
+
+#index-left p{
+    font-size: 1.75rem;
+}
+
+#index-right{
+    filter: drop-shadow(-1px 1px 4px);
+}
