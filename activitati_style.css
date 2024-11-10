@@ -1,0 +1,28 @@
+main{
+    padding: 72px;
+}
+
+.activity{
+    background-color: rgba(43,118,178,1);
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.activity h2{
+    font-size: 1.75em;
+    font-weight: 500;
+    color: white;
+}
+
+.activity-progress{
+    color: white;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.activity-progress h3{
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+}

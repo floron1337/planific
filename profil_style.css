@@ -26,6 +26,13 @@ main{
     scale: 1.05;
 }
 
+#profile-settings-btn{
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 #profile-stats{
     display:flex;
     justify-content: space-between;
