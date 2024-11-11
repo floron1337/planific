@@ -113,6 +113,11 @@ main{
     scale: 1.05;
 }
 
+#side-navbar-buttons > a{
+    display: flex;
+    gap: 4px;
+}
+
 #settings{
     width: 164px;
     text-align: center;
@@ -188,5 +193,16 @@ main{
     }
     #side-navbar > div > a{
         font-size: 1.25em;
+    }
+
+    #side-navbar h1::before {
+        content: "beta ";
+        color: #3498db;
+        font-size: 0.25em;
+    }
+    #side-navbar h1::after {
+        content: " Mobile";
+        color: #3498db;
+        font-size: 1.2em;
     }
 }
