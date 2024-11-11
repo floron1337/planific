@@ -13,6 +13,35 @@
     font-size: 1.75rem;
 }
 
+#index-left > div{
+    display: flex;
+    gap: 8px;
+}
+
 #index-right{
     filter: drop-shadow(-1px 1px 4px);
+    width: 100%;
+}
+
+@media only screen and (max-width: 1250px) {
+    #index-main{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #index-right{
+        width: 80%;
+    }
+    #index-left > div{
+        flex-direction: column;
+    }
+    #index-left p{
+        font-size: 1em;
+    }
+    #index-main{
+        padding: 32px;
+    }
 }
