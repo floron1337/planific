@@ -1,3 +1,29 @@
 main{
     padding: 72px;
 }
+
+#objective-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 95%;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.objective{
+    background-color: rgba(43,118,178,1);
+    padding: 16px;
+    border-radius: 16px;
+    filter: drop-shadow(4px 4px 4px);
+}
+
+.objective h2{
+    color: white;
+    font-weight: 400;
+    font-size: 1.75em;
+}
+
+.objective p{
+    color:white;
+}

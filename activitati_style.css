@@ -2,12 +2,26 @@ main{
     padding: 72px;
 }
 
+#activity-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    height: 80%;
+    overflow-y: auto;
+}
+
 .activity{
     background-color: rgba(43,118,178,1);
     padding: 16px;
     border-radius: 16px;
     width: 30%;
     filter: drop-shadow(4px 4px 4px);
+    height: 225px;
+}
+
+.activity-header{
+    display: flex;
+    justify-content: space-between;
 }
 
 .activity h2{
@@ -30,4 +44,15 @@ main{
 
 .activity p{
     color:white;
+}
+
+#create-activity-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#create-activity-container > h2{
+    font-weight: 400;
 }
