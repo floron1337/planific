@@ -14,6 +14,7 @@ main{
 }
 
 #profile-name h1{
+    text-align: center;
     color: white;
 }
 
@@ -51,6 +52,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-right:64px;
 }
 
@@ -61,4 +63,47 @@ main{
 
 #profile-cta > p{
     font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1440px) {
+    body{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        overflow-x: hidden;
+    }
+    #body-content{
+        position: relative;
+        width: 95vw;
+        left:0;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    #profile-stats{
+        flex-direction: column;
+        margin: 0;
+        margin-top: 32px;
+    }
+    #profile-cta{
+        margin-right: 0;
+        text-align: center;
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    #profile-cta > div{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    #profile-cta > h2{
+        font-size: 1.5em;
+    }
+    #profile-cta > p{
+        font-size: 1em;
+    }
 }

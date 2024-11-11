@@ -1,4 +1,4 @@
-const isLoggedIn = false
+const isLoggedIn = true
 const currentPage = window.location.pathname
 
 if(isLoggedIn && (currentPage === "/"  || currentPage === "/index.html" || currentPage === "/login.html" || currentPage === "/signup.html")){

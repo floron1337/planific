@@ -43,8 +43,27 @@ main{
     color: white;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1264px) {
     main{
         flex-direction: column;
+        justify-content: center;
+    }
+    #auth-form{
+        width: 45vw;
+        height: auto;  
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #auth-right{
+        width: 45vw;
+        height: auto;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .primary-btn{
+        font-size: 0.5em;
     }
 }

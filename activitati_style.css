@@ -7,7 +7,7 @@ main{
     flex-wrap: wrap;
     gap: 16px;
     height: 80%;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .activity{
@@ -55,4 +55,18 @@ main{
 
 #create-activity-container > h2{
     font-weight: 400;
+}
+
+@media only screen and (max-width: 1268px) {
+    #create-activity-container{
+        text-align: center;
+    }
+    #activity-container{
+        flex-wrap: wrap;
+        overflow: auto;
+    }
+    .activity{
+        width: 90%;
+        height: auto;
+    }
 }

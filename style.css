@@ -149,18 +149,42 @@ main{
     main{
         width: 70%;
     }
+    body{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    #body-content{
+        position: relative;
+        width: 90vw;
+        left:0px;
+        right: 0px;
+        top: 48px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-    body{
-        min-height: 100vh;
+    #settings:hover > div{
+        width: 164px;
+        display:flex !important;
+        gap:4px;
+        position: absolute;
+        top: 224px;
     }
+
     #body-content{
         flex-direction: column;
         align-items: center;
     }
     #side-navbar{
         width: 100%;
+        border-bottom: 1px solid black;
+    }
+    #side-navbar div{
+        padding-top: 16px;
+        gap: 16px;
     }
     #side-navbar > div > a{
         font-size: 1.25em;
