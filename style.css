@@ -162,6 +162,7 @@ main{
         height: auto;
     }
     #body-content{
+        min-height: 100vh;
         position: relative;
         width: 90vw;
         left:0px;
