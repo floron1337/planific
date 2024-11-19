@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="auth_style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/auth_style.css">
     <title>Log In | Planific</title>
     <script src="https://kit.fontawesome.com/8a09abd08f.js" crossorigin="anonymous"></script>
-    <script src="login.js"></script>
+    <script src="scripts/login.js" type="module"></script>
 </head>
 <body>
     <div id="body-content">
@@ -23,17 +23,18 @@
         </nav>
 
         <main>
-            <form id="auth-form">
+            <form id="auth-form" name="login-form">
                 <h1>Loghează-te în contul tău</h1>
                 <br/>
                 <label>E-Mail</label>
-                <input placeholder="Introdu-ți adresa de E-Mail"/>
+                <input name="email" placeholder="Introdu-ți adresa de E-Mail"/>
                 <br/>
                 <label>Parolă</label>
-                <input placeholder="Introdu-ți parola" type="password"/>
+                <input name="password" placeholder="Introdu-ți parola" type="password"/>
+                <p id="login-error"></p>
                 <br>
                 <div>
-                    <button class="secondary-btn">Log In</button>
+                    <button class="secondary-btn" id="login-btn">Log In</button>
                 </div>
             </form>
             <div id="auth-right">

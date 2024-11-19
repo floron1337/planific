@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="auth_style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/auth_style.css">
     <title>Creează cont | Planific</title>
     <script src="https://kit.fontawesome.com/8a09abd08f.js" crossorigin="anonymous"></script>
-    <script src="login.js"></script>
+    <script src="scripts/login.js" type="module"></script>
 </head>
 <body>
     <div id="body-content">
@@ -31,23 +31,24 @@
                     <a href="login.html" class="primary-btn">Loghează-te</a>
                 </div>
             </div>
-            <form id="auth-form">
+            <form id="auth-form" name="signup-form">
                 <h1>Creează-ți cont</h1>
                 <br/>
                 <label>Nume</label>
-                <input placeholder="Introdu-ți numele și prenumele"/>
+                <input name="name" placeholder="Introdu-ți numele și prenumele"/>
                 <br/>
                 <label>E-Mail</label>
-                <input placeholder="Introdu-ți adresa de E-Mail"/>
+                <input name="email" type="email" placeholder="Introdu-ți adresa de E-Mail"/>
                 <br/>
                 <label>Parolă</label>
-                <input placeholder="Introdu-ți parola" type="password"/>
+                <input name="password" placeholder="Introdu-ți parola" type="password"/>
                 <br>
                 <label>Confirmă parola</label>
-                <input placeholder="Introdu-ți din nou parola" type="password"/>
+                <input name="password-confirm" placeholder="Introdu-ți din nou parola" type="password"/>
+                <p id="signup-error"></p>
                 <br>
                 <div>
-                    <button class="secondary-btn">Creează cont</button>
+                    <button class="secondary-btn" id="signup-btn">Creează cont</button>
                 </div>
             </form>
             

@@ -1,0 +1,10 @@
+{
+    "test@test.com" : {
+        "name": "Florin Venis",
+        "password": "abcd"
+    },
+    "abcd@test.com" : {
+        "name": "Geaner Ghiliba",
+        "password": "1234"
+    }
+}

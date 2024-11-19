@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="profil_style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/profil_style.css">
     <title>Profil | Planific</title>
     <script src="https://kit.fontawesome.com/8a09abd08f.js" crossorigin="anonymous"></script>
-    <script src="login.js"></script>
+    <script src="scripts/login.js" type="module"></script>
 </head>
 <body>
     <div id="body-content">
@@ -21,8 +21,7 @@
 
             <div id="settings">
                 <div>
-                    <button>Cont</button>
-                    <button>Delogheaza-te</button>
+                    <button id="logout-btn">Delogheaza-te</button>
                 </div>
                 <button href="" id="settings-btn"><i class="fa-solid fa-gear"></i> Setări</button>
             </div>
@@ -30,8 +29,6 @@
         <main>
             <section id="profile-name">
                 <h1>Profilul lui [username]</h1>
-                <br/>
-                <button href="" id="profile-settings-btn"><i class="fa-solid fa-gear"></i> Setări cont</button>
             </section>
 
             <section id="profile-stats">
