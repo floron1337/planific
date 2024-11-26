@@ -34,6 +34,9 @@
 @media only screen and (max-width: 768px) {
     #index-right{
         width: 80%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
     }
     #index-left > div{
         flex-direction: column;
@@ -43,5 +46,8 @@
     }
     #index-main{
         padding: 32px;
+    }
+    #index-right > img{
+        width: 400px;
     }
 }
