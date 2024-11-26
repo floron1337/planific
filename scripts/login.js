@@ -48,6 +48,7 @@ function submitLoginForm(e){
         if(!success){
             const errorDisplay = document.getElementById("login-error");
             errorDisplay.innerHTML = "Datele introduse sunt invalide!";
+            errorDisplay.className = "shake-animation";
         }
     }
 }
