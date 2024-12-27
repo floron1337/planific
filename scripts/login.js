@@ -15,7 +15,7 @@ function logIn(email, password){
         localStorage.setItem("LOGGED_IN", true);
         localStorage.setItem("USER_EMAIL", email);
         localStorage.setItem("USER_NAME", users[email].name);
-        localStorage.setItem("USER_PASSWORD", password);
+        //localStorage.setItem("USER_PASSWORD", password);
         location.reload();
         return true;
     }

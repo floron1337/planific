@@ -61,6 +61,23 @@ body{
     background-color: rgb(25, 92, 148);
 }
 
+.danger-btn{
+    padding: 24px 24px;
+    background-color: rgb(238, 5, 5);
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.danger-btn > i{
+    font-size: 2em;
+}
+
+.danger-btn:hover{
+    background-color: rgb(214, 9, 9);
+}
+
 .secondary-btn{
     padding: 12px 24px;
     border: 1px solid black;

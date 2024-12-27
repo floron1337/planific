@@ -11,11 +11,21 @@ main{
     padding-right: 8px;
 }
 
+#objective-selector-form > label{
+    font-size: 1.5em;
+}
+
+#objective-selector-form > select{
+    font-size: 1.5em;
+}
+
 .objective{
     background-color: rgba(43,118,178,1);
     padding: 16px;
     border-radius: 16px;
     filter: drop-shadow(4px 4px 4px);
+    display: flex;
+    justify-content: space-between;
 }
 
 .objective h2{
@@ -26,6 +36,10 @@ main{
 
 .objective p{
     color:white;
+}
+
+.done{
+    background-color: rgba(43,118,178, 0.25);
 }
 
 @media only screen and (max-width: 1250px) {
