@@ -37,6 +37,11 @@ body{
     background: rgb(22, 77, 122);
 }
 
+.hidden{
+    visibility: hidden;
+    position: absolute;
+}
+
 #body-content{
     background-color: white;
     position: absolute;

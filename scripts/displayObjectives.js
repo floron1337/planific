@@ -1,4 +1,4 @@
-import { fetchActivities, fetchObjectives } from "./activitiesHandler.js"
+import { addObjective, completeObjective, deleteObjective, fetchActivities, fetchObjectives } from "./activitiesHandler.js"
 
 const activitySelector = document.getElementById("objective-selector")
 
@@ -7,12 +7,21 @@ activitySelector.addEventListener("change", displayObjectives)
 displayActivities()
 
 const urlParams = new URLSearchParams(window.location.search);
-const paramsActivityIndex = urlParams.get('activity');
+const paramsActivityIndex = urlParams.get('activity') || 0;
 
-if(paramsActivityIndex){
-    activitySelector.selectedIndex = paramsActivityIndex; 
-    displayObjectives();  
-}
+activitySelector.selectedIndex = paramsActivityIndex; 
+displayObjectives();  
+
+const addObjectivesMenuBtn = document.getElementById("add-objective-menu-btn");
+const objectiveCreator = document.getElementById("new-objective-creator")
+
+addObjectivesMenuBtn.addEventListener("click", handleAddObjectiveMenuButton)
+
+let menuOpen = false
+
+const addObjectiveButton = document.getElementById("add-objective-btn")
+const newObjectiveTitleInput = document.getElementById("new-objective-title")
+addObjectiveButton.addEventListener("click", handleAddObjectiveButton)
 
 function displayActivities(){
     const activities = fetchActivities()
@@ -30,11 +39,11 @@ function displayObjectives(e){
         e.preventDefault();
 
     const objectives = fetchObjectives(activitySelector.selectedIndex);
-    
+
     let activeObjectives = ""
     let finishedObjectives = ""
 
-    objectives.forEach(objective => {
+    objectives.forEach((objective, index) => {
         if(!objective.done){
             activeObjectives += `
             <div class="objective">
@@ -42,9 +51,9 @@ function displayObjectives(e){
                     <p>Activ</p>
                     <h2>${objective.title}</h2>
                     <br>
-                    <button class="secondary-btn">Marchează complet</button>
+                    <button class="secondary-btn complete-objective-btn" id="c-${index}">Marchează complet</button>
                 </div>
-                <button class="danger-btn"><i class="fa-solid fa-trash"></i></button>
+                <button class="danger-btn delete-objective-btn" id="d-${index}"><i class="fa-solid fa-trash"></i></button>
             </div>
             `
         }
@@ -64,4 +73,55 @@ function displayObjectives(e){
     const objectiveContainer = document.getElementById("objective-container");
     const content = activeObjectives + finishedObjectives;
     objectiveContainer.innerHTML = content;
+
+    const completeButtons = document.getElementsByClassName("complete-objective-btn")
+    for(let i = 0; i < completeButtons.length; i++){
+        completeButtons[i].addEventListener("click", handleCompleteObjectiveButton);
+    }
+}
+
+function handleAddObjectiveMenuButton(e){
+    if(e)
+        e.preventDefault();
+
+    menuOpen = !menuOpen;
+
+    if(menuOpen){
+        objectiveCreator.className = ""
+        addObjectivesMenuBtn.innerHTML = `Inchide Meniu <i class="fa-solid fa-arrow-up"></i>`   
+    }
+    else{
+        addObjectivesMenuBtn.innerHTML = `Adauga Obiective <i class="fa-solid fa-arrow-down"></i>`
+        objectiveCreator.className = "hidden"
+    }
+}
+
+function handleAddObjectiveButton(e){
+    if(e)
+        e.preventDefault()
+
+    if(newObjectiveTitleInput.value.length == 0)
+        return
+
+    let activityId = activitySelector.selectedIndex;
+    let newObjective = {
+        "title": newObjectiveTitleInput.value,
+        "done": false
+    }
+
+    addObjective(activityId, newObjective);
+    displayObjectives();
+
+    newObjectiveTitleInput.value = ""
+}
+
+function handleCompleteObjectiveButton(e){
+    if(e)
+        e.preventDefault()
+
+    const activityId = activitySelector.selectedIndex;
+    const objectiveId = parseInt(e.target.id.substring(2))
+
+    completeObjective(activityId, objectiveId);
+    displayObjectives();
 }

@@ -6,7 +6,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 16px;
-    height: 95%;
+    height: 80%;
     overflow-y: auto;
     padding-right: 8px;
 }
@@ -26,6 +26,7 @@ main{
     filter: drop-shadow(4px 4px 4px);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .objective h2{
@@ -40,6 +41,23 @@ main{
 
 .done{
     background-color: rgba(43,118,178, 0.25);
+}
+
+#new-objective-creator{
+    align-items: center;
+    display:flex;
+    gap: 4px;
+    padding-bottom: 12px;
+}
+
+#new-objective-creator > label{
+    font-size: 1.5em;
+}
+
+#new-objective-creator > input{
+    font-size: 1.25em;
+    height: 24px;
+    padding: 4px;
 }
 
 @media only screen and (max-width: 1250px) {
