@@ -53,13 +53,16 @@ body{
     display:flex;
 }
 
+button i{
+    pointer-events: none;
+}
+
 .primary-btn{
     padding: 12px 24px;
     background-color: rgb(43,118,178);
     color: white;
     border-radius: 2rem;
     cursor: pointer;
-    transition: 0.4s ease;
 }
 
 .primary-btn:hover{

@@ -32,8 +32,27 @@ main{
 
 .activity-progress{
     display: flex;
-    gap: 4px;
+    gap: 8px;
     align-items: center;
+}
+
+.progress-bar{
+    display:flex;
+    align-items: center;
+    padding: 2px;
+    background-color:white;
+    width: 175px;
+    height: 24px;
+    border-radius: 1em;
+}
+
+.progress-bar > div{
+    border-radius: 1em;
+    background: rgb(26,225,226);
+    background: linear-gradient(270deg, rgba(26,225,226,1) 0%, rgba(43,118,178,1) 100%);
+    width: 75%;
+    height: 24px;
+    text-align: center;
 }
 
 .activity h3{

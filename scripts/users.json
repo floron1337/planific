@@ -18,7 +18,13 @@
                     {
                         "title":"Incepe sistemul de obiective si activitati",
                         "done": true
-                    },
+                    }
+                ]
+            },
+            {
+                "title": "Proiect ITBI",
+                "description": "Proiect pentru facultate",
+                "objectives": [
                     {
                         "title":"Incepe sistemul de obiective si activitati",
                         "done": true
@@ -31,15 +37,6 @@
                         "title":"Incepe sistemul de obiective si activitati",
                         "done": true
                     }
-                ]
-            },
-            {
-                "title": "Proiect ITBI",
-                "description": "Proiect pentru facultate",
-                "objectives": [
-                    "test",
-                    "test",
-                    "abcd"
                 ]
             }
         ]

@@ -19,6 +19,18 @@ export function fetchObjectives(activityId){
     return activities[activityId].objectives || [];
 }
 
+export function deleteActivity(activityId){
+    const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
+
+    if(!isLoggedIn)
+        return []
+
+    const activities = JSON.parse(localStorage.getItem("USER_ACTIVITIES"));
+    activities.splice(activityId, 1);
+
+    localStorage.setItem("USER_ACTIVITIES", JSON.stringify(activities));
+}
+
 export function addObjective(activityId, objective){
     const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
 
@@ -26,7 +38,10 @@ export function addObjective(activityId, objective){
         return []
 
     const activities = JSON.parse(localStorage.getItem("USER_ACTIVITIES"));
-    activities[activityId].objectives.push(objective)
+    if(activities[activityId].objectives)
+        activities[activityId].objectives.unshift(objective);
+    else
+        activities[activityId].objectives = [objective];
 
     localStorage.setItem("USER_ACTIVITIES", JSON.stringify(activities));
 }

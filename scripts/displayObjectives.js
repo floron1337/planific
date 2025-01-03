@@ -65,6 +65,7 @@ function displayObjectives(e){
                     <h2>${objective.title}</h2>
                     <br>
                 </div>
+                <button class="danger-btn delete-objective-btn" id="d-${index}"><i class="fa-solid fa-trash"></i></button>
             </div>
             `
         }
@@ -77,6 +78,10 @@ function displayObjectives(e){
     const completeButtons = document.getElementsByClassName("complete-objective-btn")
     for(let i = 0; i < completeButtons.length; i++){
         completeButtons[i].addEventListener("click", handleCompleteObjectiveButton);
+    }
+    const deleteButtons = document.getElementsByClassName("delete-objective-btn")
+    for(let i = 0; i < deleteButtons.length; i++){
+        deleteButtons[i].addEventListener("click", handleDeleteObjectiveButton);
     }
 }
 
@@ -123,5 +128,17 @@ function handleCompleteObjectiveButton(e){
     const objectiveId = parseInt(e.target.id.substring(2))
 
     completeObjective(activityId, objectiveId);
+    displayObjectives();
+}
+
+function handleDeleteObjectiveButton(e){
+    if(!e)
+        return
+
+    const btnId = e.target.getAttribute("id")
+    const activityId = activitySelector.selectedIndex;
+    const objectiveId = parseInt(btnId.substring(2))
+    
+    deleteObjective(activityId, objectiveId)
     displayObjectives();
 }
