@@ -19,6 +19,18 @@ export function fetchObjectives(activityId){
     return activities[activityId].objectives || [];
 }
 
+export function createActivity(activity){
+    const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
+
+    if(!isLoggedIn)
+        return []
+
+    const activities = JSON.parse(localStorage.getItem("USER_ACTIVITIES"));
+    activities.push(activity);
+
+    localStorage.setItem("USER_ACTIVITIES", JSON.stringify(activities));
+}
+
 export function deleteActivity(activityId){
     const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
 

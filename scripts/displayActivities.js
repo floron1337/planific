@@ -1,6 +1,18 @@
-import { deleteActivity, fetchActivities } from "./activitiesHandler.js";
+import { createActivity, deleteActivity, fetchActivities } from "./activitiesHandler.js";
 
 const activitiesContainer = document.getElementById("activity-container");
+
+const createActivityMenuButton = document.getElementById("create-activity-menu-button")
+const closeActivityMenuButton = document.getElementById("close-new-activity-creator")
+const createActivityMenu = document.getElementById("new-activity-creator")
+
+const newActivityTitleInput = document.getElementById("new-activity-title")
+const newActivityDescriptionInput = document.getElementById("new-objective-description")
+const newActivityCreateButton = document.getElementById("add-activity-btn")
+newActivityCreateButton.addEventListener("click", createNewActivity)
+
+createActivityMenuButton.addEventListener("click", openCreateActivityMenu)
+closeActivityMenuButton.addEventListener("click", closeCreateActivityMenu)
 
 displayActivities();
 
@@ -50,6 +62,20 @@ function displayActivities(){
     }
 }
 
+function openCreateActivityMenu(e){
+    if(e)
+        e.preventDefault();
+
+    createActivityMenu.className = ""
+}
+
+function closeCreateActivityMenu(e){
+    if(e)
+        e.preventDefault();
+
+    createActivityMenu.className = "hidden"
+}
+
 function handleDeleteActivityButton(e){
     if(!e)
         return
@@ -58,5 +84,27 @@ function handleDeleteActivityButton(e){
     const activityId = parseInt(btnId.substring(2));
     
     deleteActivity(activityId);
+    displayActivities();
+}
+
+function createNewActivity(e){
+    if(e)
+        e.preventDefault();
+
+    const activityTitle = newActivityTitleInput.value;
+    const activityDescription = newActivityDescriptionInput.value;
+    if(!activityTitle || !activityDescription)
+        return
+
+    const newActivity = {
+        "title": activityTitle,
+        "description": activityDescription,
+        "objectives": []
+    }
+
+    newActivityTitleInput.value = "";
+    newActivityDescriptionInput.value = "";
+    closeCreateActivityMenu();
+    createActivity(newActivity);
     displayActivities();
 }

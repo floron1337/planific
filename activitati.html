@@ -34,8 +34,25 @@
             <br><br>
             <section id="create-activity-container">
                 <h2>Ai o nouă activitate?</h2>
-                <a href="" class="primary-btn">Creează activitate</a>
+                <button class="primary-btn" id="create-activity-menu-button">Creează Activitate <i class="fa-solid fa-arrow-up-from-bracket"></i></button>
             </section>
+
+            <form id="new-activity-creator" class="hidden">
+                <div>
+                    <div style="text-align: right;">
+                        <button id="close-new-activity-creator" class="primary-btn">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
+                    <label for="new-activity-title">Titlu Activitate</label>
+                    <input id="new-activity-title" placeholder="Introdu titlul activității" required/>
+                    <label for="new-objective-description">Descriere</label>
+                        
+                    <textarea id="new-objective-description" name="new-objective-description" rows="4" cols="50" placeholder="Scrie o scurtă descriere a activității" required></textarea>
+                    <br>
+                    <button class="primary-btn" id="add-activity-btn">Creeaza Activitate <i class="fa-solid fa-plus"></i></button>
+                </div>
+            </form>
         </main>
     </div>
     <script src="scripts/displayActivities.js" type="module"></script>

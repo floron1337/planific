@@ -76,6 +76,42 @@ main{
     font-weight: 400;
 }
 
+#new-activity-creator{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-activity-creator > div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 24px 32px;
+    background-color: white;
+}
+
+#new-activity-creator label{
+    font-size: 1.5em;
+}
+
+#new-activity-creator input{
+    font-size: 1.25em;
+    height: 24px;
+    padding: 4px;
+}
+
+#new-activity-creator textarea{
+    padding: 4px;
+    font-size: 1.25em;
+}
+
 @media only screen and (max-width: 1268px) {
     #create-activity-container{
         text-align: center;
@@ -87,5 +123,8 @@ main{
     .activity{
         width: 90%;
         height: auto;
+    }
+    #new-activity-creator > div{
+        width: 300px;
     }
 }
