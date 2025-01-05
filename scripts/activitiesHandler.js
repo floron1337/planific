@@ -9,6 +9,33 @@ export function fetchActivities(){
     return JSON.parse(localStorage.getItem("USER_ACTIVITIES")) || [];
 }
 
+export function getTotalObjectivesCount(){
+    const activities = fetchActivities();
+    let objectivesCount = 0;
+
+    activities.forEach(activity => {
+        objectivesCount += activity.objectives.length || 0;        
+    });
+
+    return objectivesCount;
+}
+
+export function getActiveObjectivesCount(){
+    const activities = fetchActivities();
+    let objectivesCount = 0;
+
+    activities.forEach(activity => {
+        if(activity.objectives){
+            activity.objectives.forEach(objective => {
+                if(!objective.done)
+                    objectivesCount++;
+            });
+        }
+    });
+
+    return objectivesCount;
+}
+
 export function fetchObjectives(activityId){
     const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
 
