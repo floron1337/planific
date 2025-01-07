@@ -81,14 +81,16 @@ function displayObjectives(e){
     }
     const deleteButtons = document.getElementsByClassName("delete-objective-btn")
     for(let i = 0; i < deleteButtons.length; i++){
-        deleteButtons[i].addEventListener("click", handleDeleteObjectiveButton);
+        const btn = deleteButtons[i];
+        btn.addEventListener("click", handleDeleteObjectiveButton);
     }
 }
 
 function handleAddObjectiveMenuButton(e){
-    if(e)
+    if(e){
         e.preventDefault();
-
+        e.stopPropagation();
+    }
     menuOpen = !menuOpen;
 
     if(menuOpen){

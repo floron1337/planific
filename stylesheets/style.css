@@ -71,7 +71,7 @@ button i{
 
 .danger-btn{
     padding: 24px 24px;
-    background-color: rgb(238, 5, 5);
+    background-color: #ee0505;
     color: white;
     border-radius: 2rem;
     cursor: pointer;

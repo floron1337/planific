@@ -1,13 +1,24 @@
-import users from './users.json' with {type: "json"};
+//import users from './users.json' with {type: "json"};
+let users = {};
+await fetchUsers();
 
 const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
 const currentPage = window.location.pathname
 
 if(isLoggedIn && (currentPage === "/"  || currentPage === "/index.html" || currentPage === "/login.html" || currentPage === "/signup.html")){
-    window.location.replace("/activitati.html")
+    window.location.replace("/profil.html")
 }
 else if(!isLoggedIn && (currentPage === "/obiective.html" || currentPage === "/profil.html" || currentPage === "/activitati.html")){
     window.location.replace("/index.html")
+}
+
+async function fetchUsers() {
+    try {
+        const response = await fetch('./users.json');
+        users = await response.json();
+    } catch (error) {
+        console.error("Eroare:", error);
+    }
 }
 
 function logIn(email, password){
@@ -26,7 +37,8 @@ function logIn(email, password){
 function signUp(name, email, password){
     users[email] = {
         "name": name,
-        "password": password
+        "password": password,
+        "activities": []
     }
     return logIn(email, password);
 }
@@ -66,6 +78,27 @@ function submitSignupForm(e){
         const password = signupForm["password"].value;
         const passwordConfirm = signupForm["password-confirm"].value;
         const errorDisplay = document.getElementById("signup-error");
+
+        const nameRegex = /^[A-Za-zăâîșțĂÂÎȘȚ\s]{3,50}$/; // Acceptă litere și spații, între 3 și 50 de caractere
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Format de email standard
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/; // Min 8 caractere, cel puțin o literă mare, o cifră, un simbol
+
+        if (!nameRegex.test(name)) {
+            errorDisplay.innerHTML = "Numele trebuie să conțină doar litere și să aibă între 3 și 50 de caractere.";
+            return;
+        }
+    
+        // Validare Email
+        if (!emailRegex.test(email)) {
+            errorDisplay.innerHTML = "Introduceți un email valid.";
+            return;
+        }
+    
+        // Validare Parolă
+        if (!passwordRegex.test(password)) {
+            errorDisplay.innerHTML = "Parola trebuie să aibă cel puțin 8 caractere, o literă mare, o cifră și un simbol.";
+            return;
+        }
 
         if(password != passwordConfirm){
             errorDisplay.innerHTML = "Parolele sunt diferite!";

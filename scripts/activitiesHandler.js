@@ -1,5 +1,3 @@
-import users from './users.json' with {type: "json"};
-
 export function fetchActivities(){
     const isLoggedIn = localStorage.getItem("LOGGED_IN") || false;
 
@@ -11,6 +9,10 @@ export function fetchActivities(){
 
 export function getTotalObjectivesCount(){
     const activities = fetchActivities();
+    
+    if(activities.length === 0)
+        return 0;
+    
     let objectivesCount = 0;
 
     activities.forEach(activity => {
